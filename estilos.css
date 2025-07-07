@@ -1,0 +1,173 @@
+/* ===== MENÚ PRINCIPAL ===== */
+nav ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #343a40;
+}
+
+nav ul.menu li {
+  position: relative;
+}
+
+nav ul.menu li a {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+nav ul.menu li a:hover {
+  background-color: #1e90ff;
+}
+
+/* ===== SUBMENÚ PRINCIPAL Y SECUNDARIO ===== */
+.submenu,
+.submenu-right {
+  position: absolute;
+  background-color: #343a40; /* Igual que el menú principal */
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.submenu a,
+.submenu-right a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.submenu a:hover,
+.submenu-right a:hover {
+  background-color: #1e90ff;
+}
+
+/* Mostrar submenús en computador al pasar el mouse */
+.has-submenu:hover > .submenu {
+  display: flex;
+}
+.has-submenu:hover > .submenu-right {
+  display: flex;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: #e0e0e0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #1e90ff;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.bloque {
+  width: 45%;
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE Y FUNCIONALIDAD MÓVIL ===== */
+@media (max-width: 768px) {
+  nav ul.menu {
+    flex-direction: column;
+    display: none;
+  }
+
+  nav ul.menu.activo {
+    display: flex;
+  }
+
+  nav ul.menu li {
+    width: 100%;
+  }
+
+  nav ul.menu li a {
+    padding: 1rem;
+    border-bottom: 1px solid #444;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: right;
+    background-color: #343a40;
+  }
+
+  .submenu,
+  .submenu-right {
+    position: static;
+    background-color: #343a40;
+    box-shadow: none;
+  }
+
+  .submenu.visible,
+  .submenu-right.visible {
+    display: flex !important;
+  }
+
+  .submenu a,
+  .submenu-right a {
+    padding-left: 2rem;
+    color: white;
+  }
+
+  .submenu a:hover,
+  .submenu-right a:hover {
+    background-color: #1e90ff;
+  }
+}
